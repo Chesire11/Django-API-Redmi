@@ -1,0 +1,29 @@
+<!-- templates/Phones/redmi_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ redmi.name }}</title>
+</head>
+<body>
+    <h1>{{ redmi.name }}</h1>
+    <img src="{{ redmi.image.url }}" alt="{{ redmi.name }} image">
+    
+    <h2>Variants</h2>
+    {% if variants %}
+        <ul>
+            {% for variant in variants %}
+                <li>
+                    <strong>SKU:</strong> {{ variant.sku }}<br>
+                    <strong>Name:</strong> {{ variant.name }}<br>
+                    <strong>Price:</strong> ${{ variant.price }}<br>
+                    <strong>Details:</strong> {{ variant.details }}<br>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No variants available for this model.</p>
+    {% endif %}
+</body>
+</html>

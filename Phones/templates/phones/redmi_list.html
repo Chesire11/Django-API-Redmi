@@ -1,0 +1,21 @@
+{% load static %}
+
+<!-- templates/redmi_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redmi Phones</title>
+</head>
+<body>
+    <h1>Redmi Phones</h1>
+    <ul>
+        {% for redmi in redmi_list %}
+            <li>
+                <a href="{% url 'redmi_detail' redmi.id %}">{{ redmi.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
